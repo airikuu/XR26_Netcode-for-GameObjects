@@ -1,11 +1,24 @@
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 public class MainMenuDisplay : MonoBehaviour
 {
     [Header("Settings")]
     [SerializeField] private string gameplaySceneName = "Gameplay";
+    [SerializeField] private TMP_InputField nameInput;
+
+
+    private void Start()
+    {
+        nameInput.onValueChanged.AddListener(OnNameChanged);
+    }
+
+    private void OnNameChanged.(string name)
+    {
+        PlayerSettings.PlayerName = name;
+    }    
+
 
     public void StartHost()
     {
