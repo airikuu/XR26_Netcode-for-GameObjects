@@ -1,4 +1,4 @@
 public static class PlayerSettings
 {
-    public static string PlayerName = "";
+    public static string PlayerName;
 }
